@@ -2,222 +2,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Saritha S. | Academic Portfolio</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f9fc;
-            color: #263445;
-            line-height: 1.7;
-        }
-
-        header {
-            background: #142d4e;
-            color: white;
-            padding: 25px 8%;
-        }
-
-        header h1 {
-            font-size: 30px;
-        }
-
-        header p {
-            color: #d4e1f0;
-        }
-
-        nav {
-            background: #203f65;
-            padding: 14px 8%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: #a9d5ff;
-        }
-
-        .hero {
-            padding: 75px 8%;
-            background: white;
-        }
-
-        .hero h2 {
-            color: #173b63;
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            max-width: 750px;
-            font-size: 18px;
-        }
-
-        .section {
-            padding: 45px 8%;
-        }
-
-        .section h2 {
-            color: #173b63;
-            margin-bottom: 18px;
-            font-size: 26px;
-        }
-
-        .card {
-            background: white;
-            padding: 24px;
-            border-radius: 10px;
-            margin-bottom: 18px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-        }
-
-        .card h3 {
-            color: #244f78;
-            margin-bottom: 8px;
-        }
-
-        footer {
-            background: #142d4e;
-            color: white;
-            text-align: center;
-            padding: 22px;
-        }
-
-        @media (max-width: 600px) {
-            .hero h2 {
-                font-size: 28px;
-            }
-
-            nav {
-                gap: 14px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic portfolio of Dr. Saritha S., Professor of Information Technology, researcher in AI, machine learning, spatiotemporal data mining and ocean visualization.">
+<title>Dr. Saritha S. | Academic Portfolio</title>
+<style>
+:root{
+  --navy:#102b46; --blue:#1f527d; --teal:#4b9b9a; --ink:#243447;
+  --muted:#64748b; --paper:#f4f7fb; --white:#fff; --line:#e2eaf2;
+  --shadow:0 12px 34px rgba(16,43,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "Segoe UI",Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{background:linear-gradient(120deg,#102b46,#1d5278);color:#fff;padding:42px 22px 30px}
+.top-inner{max-width:1120px;margin:auto;display:flex;align-items:center;gap:28px}
+.avatar{width:126px;height:126px;flex:0 0 126px;border-radius:50%;border:4px solid rgba(255,255,255,.8);background:#dce8f0;display:grid;place-items:center;color:var(--navy);font-size:38px;font-weight:700;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:0 0 8px}
+.role{font-size:18px;color:#e1edf7;margin:0}
+.affil{color:#c6d8e8;margin:7px 0 0}
+.hero-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hero-links a{border:1px solid rgba(255,255,255,.4);border-radius:22px;padding:6px 13px;color:#fff;font-size:13px}
+.tabs-wrap{background:#fff;box-shadow:0 3px 12px rgba(16,43,70,.05);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+.tabs{max-width:1120px;margin:auto;display:flex;gap:4px;overflow-x:auto;padding:10px 14px}
+.tab{white-space:nowrap;border:0;background:transparent;color:#536579;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px}
+.tab:hover{background:#eef4f8;color:var(--blue)}
+.tab.active{background:#e8f1f7;color:var(--navy)}
+main{max-width:1120px;margin:30px auto;padding:0 18px 55px}
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+.section-title{font-size:25px;color:var(--navy);margin:0 0 16px}
+.intro{font-size:17px;max-width:900px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
+.card h3{color:var(--blue);margin:0 0 7px;font-size:18px}
+.card p:last-child{margin-bottom:0}
+.kicker{color:var(--teal);font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pill{background:#edf4f8;color:#285477;border-radius:20px;padding:5px 11px;font-size:13px}
+.timeline{border-left:2px solid #cbdce8;margin-left:8px;padding-left:22px}
+.timeline-item{position:relative;margin:0 0 22px}
+.timeline-item:before{content:"";position:absolute;left:-29px;top:8px;width:12px;height:12px;background:var(--teal);border:3px solid #e8f2f5;border-radius:50%}
+.meta{color:var(--muted);font-size:14px}
+ul.clean{padding-left:20px;margin:8px 0}
+.pub{padding:15px 0;border-bottom:1px solid var(--line)}
+.pub:last-child{border:0}
+.pub strong{color:#243f59}
+.pub .meta{margin-top:4px}
+.two-col{columns:2;column-gap:36px}
+.two-col li{break-inside:avoid;margin-bottom:7px}
+footer{text-align:center;background:var(--navy);color:#d4e2ee;padding:24px 16px;font-size:14px}
+.note{background:#edf5f7;border-left:4px solid var(--teal);padding:13px 16px;border-radius:8px;color:#35566a}
+@media(max-width:700px){
+ .top-inner{align-items:flex-start;gap:16px}.avatar{width:82px;height:82px;flex-basis:82px;font-size:27px}
+ .grid{grid-template-columns:1fr}.two-col{columns:1}.card{padding:18px}main{margin-top:20px}
+}
+</style>
 </head>
-
 <body>
-
-<header>
-    <h1>Dr. Saritha S.</h1>
-    <p>Professor | Researcher | Academic</p>
-    <p>Department of Information Technology</p>
-    <p>Rajagiri School of Engineering & Technology, Kochi, Kerala</p>
+<header class="topbar">
+ <div class="top-inner">
+  <div class="avatar" aria-label="Photo placeholder">SS</div>
+  <div>
+   <div class="kicker" style="color:#a9d2d5">Academic & Research Portfolio</div>
+   <h1>Dr. Saritha S.</h1>
+   <p class="role">Professor | Department of Information Technology</p>
+   <p class="affil">Rajagiri School of Engineering &amp; Technology (Autonomous), Kochi, Kerala, India</p>
+   <div class="hero-links">
+    <a href="mailto:saritha_s@rajagiritech.edu.in">Institutional Email</a>
+    <a href="https://scholar.google.com/citations?hl=en&amp;user=Y8xVX8kAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://orcid.org/0000-0003-3902-5312" target="_blank" rel="noopener">ORCID</a>
+   </div>
+  </div>
+ </div>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#patents">Patents</a>
-    <a href="#contact">Contact</a>
-</nav>
+<div class="tabs-wrap">
+ <nav class="tabs" aria-label="Portfolio sections">
+  <button class="tab active" data-tab="about">About</button>
+  <button class="tab" data-tab="career">Education &amp; Career</button>
+  <button class="tab" data-tab="research">Research</button>
+  <button class="tab" data-tab="publications">Publications</button>
+  <button class="tab" data-tab="patents">Patents &amp; Books</button>
+  <button class="tab" data-tab="teaching">Teaching &amp; Service</button>
+  <button class="tab" data-tab="talks">Talks &amp; Contact</button>
+ </nav>
+</div>
 
-<section class="hero">
-    <h2>Welcome to My Academic Portfolio</h2>
-    <p>
-        I am a Professor in the Department of Information Technology
-        at Rajagiri School of Engineering & Technology, Kochi.
-        My academic and research interests include Artificial Intelligence,
-        Machine Learning, Spatiotemporal Data Mining and Ocean Visualization.
-        I am interested in applying intelligent computing techniques
-        to address real-world challenges.
-    </p>
+<main>
+<section id="about" class="panel active">
+ <div class="card">
+  <div class="kicker">Welcome</div>
+  <h2 class="section-title">About Me</h2>
+  <p class="intro">I am a Professor in the Department of Information Technology at Rajagiri School of Engineering &amp; Technology, Kochi. I hold a Ph.D. in Computer Science and Engineering from Cochin University of Science and Technology (CUSAT), and have academic and industry experience spanning more than two decades.</p>
+  <p>My research interests include artificial intelligence, machine learning, spatiotemporal data mining, ocean data analytics and visualization, and intelligent methods for environmental applications. My work brings together computing techniques and domain knowledge to study practical problems in areas such as ocean observation and flood susceptibility assessment.</p>
+ </div>
+ <div class="grid">
+  <div class="card"><div class="kicker">Research focus</div><h3>Intelligent Data Analysis</h3><p>Machine learning, deep learning, computer vision and spatiotemporal pattern analysis.</p></div>
+  <div class="card"><div class="kicker">Applied research</div><h3>Environment &amp; Oceans</h3><p>Ocean visualization, mesoscale eddy analysis and data-driven environmental applications.</p></div>
+ </div>
+ <div class="card">
+  <h3>Research profiles</h3>
+  <div class="pills">
+   <a class="pill" href="https://scholar.google.com/citations?hl=en&amp;user=Y8xVX8kAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+   <a class="pill" href="https://orcid.org/0000-0003-3902-5312" target="_blank" rel="noopener">ORCID</a>
+   <a class="pill" href="https://www.scopus.com/authid/detail.uri?authorId=57378146600" target="_blank" rel="noopener">Scopus</a>
+   <a class="pill" href="https://publons.com/researcher/AAF-6862-2022/" target="_blank" rel="noopener">Publons</a>
+  </div>
+ </div>
 </section>
 
-<section class="section" id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I hold a Ph.D. in Computer Science and Engineering from
-            Cochin University of Science and Technology (CUSAT).
-            I have over two decades of experience in teaching,
-            research and academic administration.
-        </p>
-    </div>
+<section id="career" class="panel">
+ <h2 class="section-title">Education</h2>
+ <div class="timeline">
+  <div class="timeline-item"><h3>Ph.D. in Computer Science and Engineering</h3><div class="meta">Cochin University of Science and Technology (CUSAT) | 2020</div><p><strong>Thesis:</strong> “Mining Colocation Patterns and Change Detection in Spatiotemporal Data: A Tensor Factorization Approach.”<br><strong>Supervisor:</strong> Prof. Dr. G. Santhosh Kumar, Department of CSE, CUSAT.</p></div>
+  <div class="timeline-item"><h3>M.Tech. in Computer and Information Science</h3><div class="meta">Cochin University of Science and Technology (CUSAT) | 2011</div></div>
+  <div class="timeline-item"><h3>B.Tech. in Electrical and Electronics Engineering</h3><div class="meta">College of Engineering, Trivandrum, Kerala University | 1999</div></div>
+ </div>
+ <h2 class="section-title" style="margin-top:34px">Professional Experience</h2>
+ <div class="timeline">
+  <div class="timeline-item"><h3>Rajagiri School of Engineering &amp; Technology, Kerala</h3><div class="meta">July 2004 – Present</div><p>Professor (2024–Present); Associate Professor (2021–2023); Assistant Professor (2011–2020); Senior Lecturer (2008–2009); Lecturer (2004–2008).</p></div>
+  <div class="timeline-item"><h3>Enservices Inc., New Jersey / Kochi</h3><div class="meta">June 2001 – January 2004</div><p>Team Leader / Programmer.</p></div>
+  <div class="timeline-item"><h3>Wipro Technologies, Bangalore</h3><div class="meta">October 1999 – March 2001</div><p>Systems Engineer, Quality Engineer – SEI-CMM Level 5.</p></div>
+ </div>
 </section>
 
-<section class="section" id="research">
-    <h2>Research Interests</h2>
-    <div class="card">
-        <ul>
-            <li>Artificial Intelligence and Machine Learning</li>
-            <li>Deep Learning and Computer Vision</li>
-            <li>Spatiotemporal Data Mining</li>
-            <li>Ocean Data Analytics and Visualization</li>
-            <li>AI for Environmental and Climate Applications</li>
-        </ul>
-    </div>
+<section id="research" class="panel">
+ <h2 class="section-title">Research Interests</h2>
+ <div class="pills">
+  <span class="pill">Artificial Intelligence</span><span class="pill">Machine Learning</span><span class="pill">Deep Learning</span><span class="pill">Computer Vision</span><span class="pill">Spatiotemporal Data Mining</span><span class="pill">Ocean Data Analytics</span><span class="pill">Data Visualization</span><span class="pill">Environmental Applications</span>
+ </div>
+ <h2 class="section-title" style="margin-top:30px">Funded Research Projects</h2>
+ <div class="card">
+  <div class="kicker">Completed | Co-Principal Investigator</div>
+  <h3>OCEANVIZIO – An Interactive Dynamic Ocean Visualization Tool</h3>
+  <p><strong>Funding agency:</strong> Naval Research Board, Ministry of Defence, Government of India.</p>
+  <p><strong>Collaborator:</strong> Naval Physical Oceanographic Laboratory (NPOL), DRDO.</p>
+  <p><strong>Grant:</strong> ₹34 Lakhs | <strong>Period:</strong> June 2021 – June 2024.</p>
+  <p>Developed as an interactive tool for dynamic visualization of oceanic data, enabling users to explore ocean parameters and phenomena across selected regions and time frames. The project was undertaken for DRDO, India and the Indian Navy.</p>
+ </div>
+ <div class="card">
+  <div class="kicker">Ongoing | Principal Investigator</div>
+  <h3>An Intelligent Dashboard for Dynamic Flood Susceptibility Mapping for Indian States Using Deep Learning Techniques</h3>
+  <p><strong>Funding agency:</strong> Council of Scientific and Industrial Research (CSIR), Ministry of Science and Technology, Government of India.</p>
+  <p><strong>Period:</strong> June 2024 – June 2027 | <strong>Status:</strong> Ongoing.</p>
+  <p>The project aims to develop an intelligent dashboard for disaster management authorities, using data-driven analysis to determine flood susceptibility and support flood risk management through prevention, protection and preparedness.</p>
+  <p class="meta">The grant amount is not displayed here pending confirmation of the latest sanctioned figure.</p>
+ </div>
 </section>
 
-<section class="section" id="projects">
-    <h2>Research Projects</h2>
-
-    <div class="card">
-        <h3>OCEANVIZIO</h3>
-        <p>Interactive Dynamic Ocean Visualization Tool</p>
-        <p>Funded by Naval Research Board, Ministry of Defence, in collaboration with NPOL, DRDO.</p>
-    </div>
-
-    <div class="card">
-        <h3>Intelligent Flood Susceptibility Mapping</h3>
-        <p>
-            Development of an intelligent dashboard for dynamic
-            flood susceptibility mapping using machine learning
-            and deep learning techniques.
-        </p>
-        <p>Funded by CSIR.</p>
-    </div>
+<section id="publications" class="panel">
+ <h2 class="section-title">Selected Journal Publications</h2>
+ <div class="card">
+  <div class="pub"><strong>OCEANVIZIO: A Dynamic and Scalable Visualization Tool for Comprehensive Analysis of Ocean Parameters.</strong><div class="meta">Preetha K. G., Saritha S., Chinnu Sachidanandan, Jishnu Jeevan, Maheswaran P. A. | Defence Science Journal, 75(6), 685–692, November 2025.</div></div>
+  <div class="pub"><strong>ACO-CMAC: A Novel Ant Colony Optimization and Priority-Based MAC Protocol for Enhancing the Performance of VANETs.</strong><div class="meta">Tripti C., Preetha K. G., Saritha S., et al. | Cluster Computing, 28(11), 2025.</div></div>
+  <div class="pub"><strong>A Python Interface for Interactive Visualization and Analysis of Multivariate Ocean Data.</strong><div class="meta">Preetha K. G., Saritha S., et al. | Indonesian Journal of Electrical Engineering and Computer Science, 2024.</div></div>
+  <div class="pub"><strong>An Energy Efficiency Optimization for Uplink Communication in IEEE 802.11ah under Restricted Access Window.</strong><div class="meta">Sangeetha U., K. R. Remesh Babu, Saritha S., Preetha K. G. | Wireless Personal Communications, 138(2), 2024.</div></div>
+  <div class="pub"><strong>An Intelligent Pattern Matching Approach with Deep Hypersphere Model for Secure Big Data Storage in Cloud Environment.</strong><div class="meta">K. R. Remesh Babu, Preetha K. G., Saritha S., et al. | International Journal of Computer Information Systems and Industrial Management Applications, 15, 166–175, 2023.</div></div>
+  <div class="pub"><strong>Detection of Mesoscale Eddies through Refined Winding-Angle Method.</strong><div class="meta">Preetha K. G., Saritha S., Chinnu Sachidanandan, Jishnu Jeevan, Maheswaran P. A. | Journal of Harbin Engineering University, 2023.</div></div>
+  <div class="pub"><strong>Design and Implementation of an Augmented Reality Mobile Application for Navigating ATM Counters (AR-ATM).</strong><div class="meta">Preetha K. G., Subin K. Antony, K. R. Remesh Babu, Saritha S. | Industrial Robot: The International Journal of Robotics Research and Application, 2022.</div></div>
+  <div class="pub"><strong>An Energy Efficient Intelligent Method for Sensor Node Selection to Improve the Data Reliability in Internet of Things Networks.</strong><div class="meta">K. R. Remesh Babu, Preetha K. G., Saritha S., Rinil K. R. | KSII Transactions on Internet and Information Systems, 15(9), 3151–3168, 2021.</div></div>
+  <div class="pub"><strong>Change Detection in Urban Landscapes: A Tensor Factorization Approach.</strong><div class="meta">Saritha S., G. Santhosh Kumar | Spatial Information Research, Springer, 27(5), 2019.</div></div>
+  <div class="pub"><strong>Mining Spatial Colocations from Image-Objects: A Tensor Factorization Approach.</strong><div class="meta">Saritha S., G. Santhosh Kumar | Journal of Intelligent &amp; Fuzzy Systems, 37(5), 2019.</div></div>
+  <div class="pub"><strong>Interspectral and Intraspectral Features for Effective Classification of Remotely Sensed Images.</strong><div class="meta">Saritha S., G. Santhosh Kumar | Procedia Computer Science, 115, 2017.</div></div>
+  <div class="pub"><strong>A Hierarchical Framework for the Classification of Multispectral Imagery.</strong><div class="meta">Saritha S., G. Santhosh Kumar | Procedia Computer Science, 46, 2016.</div></div>
+  <div class="pub"><strong>An Image Mining Prototype to Achieve Medical Image Diagnosis with Effectiveness.</strong><div class="meta">Saritha S., G. Santhosh Kumar | International Journal of Information Processing, 6(2), 2012.</div></div>
+ </div>
+ <h2 class="section-title">Conferences &amp; Book Chapters</h2>
+ <div class="card">
+  <div class="pub"><strong>StyleGAN and DCGAN for Face Generation – A Comparative Evaluation.</strong><div class="meta">M. Archana, Ashwin Antony Joseph, Alex V. Ajith, Alan N. Koshy, Saritha S. | Lecture Notes in Networks and Systems, 2024.</div></div>
+  <div class="pub"><strong>Q&amp;AI: An AI Powered Mock Interview Bot for Enhancing the Performance of Aspiring Professionals.</strong><div class="meta">Joel Manuel C. J., Maria Sabi, Merene Benson, Gokul Baburaj, Saritha S. | IEEE conference, June 2024.</div></div>
+  <div class="pub"><strong>Physical Exercise Classification from Body Keypoints Using Machine Learning Techniques.</strong><div class="meta">Aadhila Rahman, Aldrin Saji, Avelin Theresa, Divya R. Nair, Saritha S. | ICAAIC 2024, IEEE.</div></div>
+  <div class="pub"><strong>Interactive Chatbot with AI Support for Universities: Enhancing Student Engagement and Administrative Efficiency.</strong><div class="meta">Preetha K. G., Saritha S., Tony R., Joel Manuel C. J., Dinny R. | ISDA, Springer Nature, 2023.</div></div>
+  <div class="pub"><strong>A Python-based Tool for the Generation of T-S Plot to Determine Water Masses in the World Ocean.</strong><div class="meta">Preetha K. G., Saritha S., Chinnu Sachidanandan, Jishnu Jeevan, Maheswaran P. A. | GCITC, IEEE, April 2024.</div></div>
+  <div class="pub"><strong>DeepPRS: A Deep Learning Integrated Pattern Recognition Methodology for Secure Data in Cloud Environment.</strong><div class="meta">K. R. Remesh Babu, Saritha S., Preetha K. G., Sangeetha U., Sminu Izudheen | 13th International Conference on Innovations in Bio-Inspired Computing and Applications, 2023.</div></div>
+  <div class="pub"><strong>Video Enhancement and Low Resolution Facial Image Reconstruction for Crime Investigation.</strong><div class="meta">Joel Eliza Jacob, Saritha S. | Springer conference, 2020.</div></div>
+  <div class="pub"><strong>Spatiotemporal Ontology for Understanding Semantics in Change Patterns of Remote Sensing Images.</strong><div class="meta">Saritha S., G. Santhosh Kumar | Springer conference, 2020.</div></div>
+  <div class="pub"><strong>Change Analysis of Indian Metropolitan Cities through a Spatiotemporal Ontology.</strong><div class="meta">Saritha S., G. Santhosh Kumar | IEEE International Conference on Data Science and Engineering, 2020.</div></div>
+  <div class="pub"><strong>Analysis of the Smart Growth of Kochi City through Landscape Metrics.</strong><div class="meta">Saritha S., G. Santhosh Kumar | IEEE TENSYMP, 2017.</div></div>
+  <div class="pub"><strong>Classification-based Land Use/Land Cover Change Detection through Landsat Images.</strong><div class="meta">Rajasree A. V., G. Santhosh Kumar, Saritha S. | IEEE International Conference on Data Science &amp; Engineering, 2014.</div></div>
+  <div class="pub"><strong>Semantic Association Mining of Spatial Patterns in Medical Images.</strong><div class="meta">Saritha S., G. Santhosh Kumar | CCIS, Springer, 2011.</div></div>
+  <div class="pub"><strong>Interestingness Analysis of Semantic Association Mining in Medical Images.</strong><div class="meta">Saritha S., G. Santhosh Kumar | CCIS, Springer, 2011.</div></div>
+ </div>
+ <div class="note">The resume also lists communicated / under-review manuscripts. Their editorial status can change, so we can add a separate “Under Review / In Progress” list after checking the latest status of each paper.</div>
 </section>
 
-<section class="section" id="publications">
-    <h2>Publications</h2>
-    <div class="card">
-        <p>
-            My research publications focus on machine learning,
-            spatiotemporal analytics, ocean data analysis and
-            intelligent environmental monitoring.
-        </p>
-        <p>Publication details and DOI links will be added here.</p>
-    </div>
+<section id="patents" class="panel">
+ <h2 class="section-title">Intellectual Property Rights</h2>
+ <div class="card">
+  <div class="kicker">Patent granted | 18 December 2024</div>
+  <h3>A Real-Time Automatic Intelligent System and Method for Wild Animal Monitoring and Counting Device Based on a Deep Convolutional Neural Network</h3>
+  <p><strong>Patent No.:</strong> 556455 | <strong>Application No.:</strong> 202241013392A</p>
+ </div>
+ <div class="card">
+  <div class="kicker">Patent granted | 12 November 2025</div>
+  <h3>Portable Public Surveillance Device with an AI Driven Face Recognition Computational Module for Large Scale Community Policing</h3>
+  <p><strong>Patent No.:</strong> 573626 | <strong>Application No.:</strong> 202041041838</p>
+ </div>
+ <h2 class="section-title" style="margin-top:30px">Books Published</h2>
+ <div class="card">
+  <ul class="clean">
+   <li><strong>Introduction to Machine Learning.</strong> Rudra Publishers &amp; Distributors, July 2026. ISBN: 978-81-69153-09-6.</li>
+   <li><strong>Security Management in Cloud Environment for Social Enterprises.</strong> Cosmos Scientific Publications, March 2023.</li>
+  </ul>
+ </div>
+ <h2 class="section-title">Articles &amp; Monographs</h2>
+ <div class="card">
+  <ul class="clean">
+   <li>“Data Mining – What, Why and Where?”, cover page article, CSI Communications, October 2015.</li>
+   <li>“How Computers are changing our relationship with the ocean”, The Hindu, 7 July 2025.</li>
+   <li>“കടലുകൾ കഥ പറയുമ്പോൾ: ആഴങ്ങളിലെ രഹസ്യങ്ങൾ കംപ്യൂട്ടറിന്റെ കണ്ണിലൂടെ...”, Malayala Manorama, 25 July 2025. <a href="https://www.manoramaonline.com/technology/science/2025/07/24/ocean-analysis-future.html" target="_blank" rel="noopener">Read article</a>.</li>
+  </ul>
+ </div>
 </section>
 
-<section class="section" id="patents">
-    <h2>Patents</h2>
-    <div class="card">
-        <p>National Patent Granted – Wild Animal Monitoring using Deep CNN.</p>
-        <p>National Patent Published – Portable Public Surveillance Device with AI Face Recognition.</p>
-    </div>
+<section id="teaching" class="panel">
+ <h2 class="section-title">Teaching</h2>
+ <div class="card">
+  <p>Courses handled at UG and PG levels include:</p>
+  <ul class="two-col">
+   <li>Formal Languages and Automata Theory</li><li>Data Structures and Algorithms</li><li>Machine Learning Algorithms</li><li>Machine Learning Lab</li><li>Data Science</li><li>Python for Engineers</li><li>Python for Data Science Lab</li><li>Computer Networks</li><li>Advanced Computer Networks</li><li>C Programming</li><li>Database Management Systems</li><li>Operating Systems</li><li>Linux Shell Scripting</li><li>Advanced Data Structures</li><li>Data Warehousing and Data Mining</li><li>Internetworking with TCP/IP</li>
+  </ul>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Programming</h3><p>Python, C, C++, Java, SQL and JavaScript.</p></div>
+  <div class="card"><h3>Libraries &amp; Frameworks</h3><p>Pandas, NumPy, Keras, TensorFlow, PyTorch, Matplotlib and Tkinter.</p></div>
+  <div class="card"><h3>Tools &amp; Technologies</h3><p>Git, GitHub and MongoDB.</p></div>
+  <div class="card"><h3>Research Supervision</h3><p>Ph.D. supervision, M.Tech. dissertation supervision and B.Tech. project guidance.</p></div>
+ </div>
+ <h2 class="section-title" style="margin-top:24px">Academic &amp; Administrative Responsibilities</h2>
+ <div class="card">
+  <ul class="clean">
+   <li>Member, Board of Studies – Department of IT (2024–Present).</li>
+   <li>Member, Board of Studies – Department of CSE (2021–2024).</li>
+   <li>Computing Division and UG/PG Curriculum Committees.</li>
+   <li>Ph.D. Supervisor, Kerala Technological University (2021–Present).</li>
+   <li>M.Tech. Dissertation Supervisor and B.Tech. Project Guide.</li>
+   <li>NAAC Coordinator of the Institution (2021–2024).</li>
+   <li>Executive Member, IQAC (2021–2024).</li>
+   <li>Head, Department of Information Technology (2018–2020).</li>
+   <li>NBA Coordinator, Department of IT (2014–2018).</li>
+   <li>Member, Academic Council (2018–2020).</li>
+   <li>Presiding Officer, Internal Complaints Committee (2020–Present).</li>
+   <li>Question Paper Setter and Scrutinizer; Comprehensive Course Viva Coordinator.</li>
+  </ul>
+ </div>
+ <h2 class="section-title">Professional Service</h2>
+ <div class="card">
+  <p><strong>Professional associations:</strong> Professional Member, Association for Computing Machinery (ACM); Executive Member, ACM Cochin Chapter.</p>
+  <p><strong>Journal reviewer:</strong> IEEE TENSYMP, IEEE Access, International Journal of Intelligent and Fuzzy Systems, International Journal of Computer Applications, and IETE Journal of Research.</p>
+  <p><strong>Other service:</strong> Conference reviewer, session chair and technical programme committee member for academic conferences.</p>
+ </div>
+ <h2 class="section-title">Selected Faculty Development Programmes</h2>
+ <div class="card">
+  <ul class="clean">
+   <li>Future Ready AI: Generative Models to Autonomous Agents (2026).</li>
+   <li>Integrating Generative AI into Research and Education (2026).</li>
+   <li>Responsible Natural Language Processing, IIIT Kottayam (2025).</li>
+   <li>Natural Language Processing and IR – Research Trends and Applications, ICFOSS (2022).</li>
+   <li>Ethics in Engineering Practice, NPTEL (2021).</li>
+   <li>Big Data Computing, NPTEL (2021).</li>
+   <li>Data Mining, NPTEL (2020).</li>
+   <li>Data Science and Artificial Intelligence, KTU (2021).</li>
+  </ul>
+ </div>
 </section>
 
-<section class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Department of Information Technology</p>
-        <p>Rajagiri School of Engineering & Technology</p>
-        <p>Kochi, Kerala, India</p>
-        <p>Professional email and academic profile links will be added here.</p>
-    </div>
+<section id="talks" class="panel">
+ <h2 class="section-title">Invited Talks &amp; Workshops</h2>
+ <div class="card">
+  <div class="pub"><strong>Hands-on FDP on Digital Image Processing.</strong><div class="meta">Nirmala College, Muvattupuzha, in association with MG University, 17 June 2026.</div></div>
+  <div class="pub"><strong>Smart Cities and Mobility.</strong><div class="meta">AICTE VAANI Workshop, Rajagiri School of Engineering &amp; Technology, 26 November 2025.</div></div>
+  <div class="pub"><strong>Workshop on Visualization Techniques.</strong><div class="meta">Government Engineering College, Thrissur, December 2022.</div></div>
+  <div class="pub"><strong>Machine Learning Concepts and Applications.</strong><div class="meta">St. Teresa’s College, Ernakulam, November 2022.</div></div>
+  <div class="pub"><strong>Workshop on Image Processing using MATLAB.</strong><div class="meta">Rajagiri School of Engineering &amp; Technology, January 2017.</div></div>
+  <div class="pub"><strong>Workshop on Software Architecture.</strong><div class="meta">St. Teresa’s College, Ernakulam, December 2016.</div></div>
+  <div class="pub"><strong>Tips on Effective Teaching.</strong><div class="meta">Faculty Orientation Programme, Rajagiri School of Engineering &amp; Technology, July 2016.</div></div>
+  <div class="pub"><strong>Career Prospects in Engineering.</strong><div class="meta">Chavara CMI Public School, Kottayam, November 2015.</div></div>
+ </div>
+ <h2 class="section-title">Contact</h2>
+ <div class="card">
+  <p><strong>Dr. Saritha S.</strong><br>Professor, Department of Information Technology<br>Rajagiri School of Engineering &amp; Technology (Autonomous)<br>Rajagiri Valley, Kochi, Kerala, India</p>
+  <p><a href="mailto:saritha_s@rajagiritech.edu.in">saritha_s@rajagiritech.edu.in</a></p>
+  <p><a href="https://scholar.google.com/citations?hl=en&amp;user=Y8xVX8kAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://orcid.org/0000-0003-3902-5312" target="_blank" rel="noopener">ORCID</a> · <a href="https://www.scopus.com/authid/detail.uri?authorId=57378146600" target="_blank" rel="noopener">Scopus</a></p>
+  <p class="meta">For privacy, personal mobile number and date of birth are not displayed on this public webpage.</p>
+ </div>
 </section>
-
-<footer>
-    <p>© 2026 Dr. Saritha S. | Academic Portfolio</p>
-</footer>
-
+</main>
+<footer>© 2026 Dr. Saritha S. · Academic &amp; Research Portfolio</footer>
+<script>
+document.querySelectorAll(".tab").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  button.classList.add("active");
+  document.getElementById(button.dataset.tab).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+ });
+});
+</script>
 </body>
 </html>
